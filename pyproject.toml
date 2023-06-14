@@ -51,3 +51,48 @@ test = [
 
 [project.scripts]
 init_bench = "vectordb_bench.__main__:main"
+
+[tool.poetry]
+name = "vectordb-bench"
+version = "0.0.1"
+description = "VectorDBBench is not just an offering of benchmark results for mainstream vector databases and cloud services, it's your go-to tool for the ultimate performance and cost-effectiveness comparison. Designed with ease-of-use in mind, VectorDBBench is devised to help users, even non-professionals, reproduce results or test new systems, making the hunt for the optimal choice amongst a plethora of cloud services and open-source vector databases a breeze."
+authors = ["XuanYang-cn <xuan.yang@zilliz.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytz = "*"
+streamlit-autorefresh = "*"
+streamlit = ">=1.23.0"
+streamlit_extras = "*"
+grpcio = "==1.53.0"
+grpcio-tools = "==1.53.0"
+pymilvus = "*"
+qdrant-client = "*"
+pinecone-client = "*"
+weaviate-client = "*"
+elasticsearch = "*"
+plotly = "*"
+pydantic = "==1.10.7"
+environs = "*"
+scikit-learn = "*"
+s3fs = "*"
+psutil = "*"
+
+[tool.poetry.dev-dependencies]
+ruff = "*"
+pytest = "*"
+
+[tool.poetry.scripts]
+init_bench = "vectordb_bench.__main__:main"
+
+[[tool.poetry.build-system]]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry.package-data]
+"vectordb_bench.results" = ["*.json"]
+
+[tool.poetry.urls]
+"repository" = "https://github.com/zilliztech/VectorDBBench"
